@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
+:root {
+  color-scheme: light dark;
+}
+
+.dark {
+  --background: #06060a;
+  --foreground: #f2f2f5;
+  --muted: #a1a1ac;
+  --accent-1: #ff9d5c;
+  --accent-2: #c084fc;
+  --accent-3: #7dd3fc;
+  --accent-grad: linear-gradient(135deg, #ffd28a 0%, #ff8a4c 32%, #c084fc 68%, #7dd3fc 100%);
+  --accent-grad-soft: linear-gradient(135deg, rgba(255, 157, 92, 0.14) 0%, rgba(192, 132, 252, 0.14) 100%);
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.45);
+  --chip-bg: rgba(255, 255, 255, 0.035);
+  --chip-border: rgba(255, 255, 255, 0.09);
+  --btn-primary-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05));
+  --btn-primary-text: #f4f2ff;
+  --btn-primary-border: rgba(255, 255, 255, 0.3);
+  --btn-primary-shadow: 0 8px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --btn-primary-shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 0 1px rgba(255, 157, 92, 0.25);
+}
+
+.light {
+  --background: #fbf3ec;
+  --foreground: #241f2e;
+  --muted: #6b6577;
+  --accent-1: #4f46e5;
+  --accent-2: #9333ea;
+  --accent-3: #0ea5e9;
+  --accent-grad: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  --accent-grad-soft: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(147, 51, 234, 0.12) 100%);
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-bg-strong: rgba(255, 255, 255, 0.65);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: rgba(80, 60, 90, 0.12);
+  --chip-bg: rgba(255, 255, 255, 0.4);
+  --chip-border: rgba(20, 20, 40, 0.09);
+  --btn-primary-bg: var(--accent-grad);
+  --btn-primary-text: #fff;
+  --btn-primary-border: transparent;
+  --btn-primary-shadow: 0 8px 24px rgba(79, 70, 229, 0.28);
+  --btn-primary-shadow-hover: 0 12px 32px rgba(79, 70, 229, 0.38);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent-1);
+  --font-sans: var(--font-inter);
+  --font-head: var(--font-space-grotesk);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+.font-head {
+  font-family: var(--font-head);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  backdrop-filter: blur(20px);
+}
+
+.glass-subtle {
+  background: var(--glass-bg-subtle);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  backdrop-filter: blur(22px);
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid var(--btn-primary-border);
+  box-shadow: var(--btn-primary-shadow);
+  backdrop-filter: blur(16px);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  box-shadow: var(--btn-primary-shadow-hover);
+}
+
+.glow-hover {
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.glow-hover:hover {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent-1) 30%, transparent),
+    0 4px 18px color-mix(in srgb, var(--accent-2) 25%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow-hover {
+    transition: none;
+  }
+}
+
+.chip-hover {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.chip-hover:hover {
+  transform: translateY(-3px) scale(1.06);
+  color: var(--foreground);
+  border-color: transparent;
+  background: var(--accent-grad-soft);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+    0 10px 24px -8px color-mix(in srgb, var(--accent-2) 40%, transparent),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* rotating conic-gradient border glow, revealed around a project card on
+   hover — a slow "gravity ring" using the theme's own accent colors. */
+.gravity-card {
+  position: relative;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.25s ease;
+}
+.gravity-card:hover {
+  transform: translateY(-6px) scale(1.012);
+  border-color: var(--glass-border);
+  box-shadow:
+    0 12px 48px var(--glass-shadow),
+    0 0 40px -8px color-mix(in srgb, var(--accent-1) 35%, transparent),
+    0 0 70px -20px color-mix(in srgb, var(--accent-2) 35%, transparent);
+}
+.gravity-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--gravity-angle, 0deg),
+    var(--accent-1),
+    var(--accent-2),
+    var(--accent-3),
+    var(--accent-1)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0.22;
+  transition: opacity 0.35s ease;
+  animation: gravity-spin 16s linear infinite;
+  pointer-events: none;
+}
+.gravity-card:hover::after {
+  opacity: 0.75;
+}
+@property --gravity-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes gravity-spin {
+  from {
+    --gravity-angle: 0deg;
+  }
+  to {
+    --gravity-angle: 360deg;
+  }
+}
+
+.stat-card {
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--glass-border);
+}
+.stat-num {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+.skill-group-glow {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.skill-group-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 32px -10px color-mix(in srgb, var(--accent-2) 35%, transparent);
+}
+
+.contact-glow {
+  box-shadow:
+    0 0 60px -20px color-mix(in srgb, var(--accent-1) 30%, transparent),
+    0 0 90px -30px color-mix(in srgb, var(--accent-3) 30%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip-hover,
+  .gravity-card,
+  .stat-card,
+  .skill-group-glow {
+    transition: none;
+  }
+  .chip-hover:hover,
+  .gravity-card:hover,
+  .stat-card:hover,
+  .skill-group-glow:hover {
+    transform: none;
+  }
+  .gravity-card::after {
+    animation: none;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cloud-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2.5%, -2%, 0) scale(1.04);
+  }
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift 24s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-cloud-drift {
+    animation: none;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent-1) 32%, var(--glass-bg-strong));
+  color: var(--foreground);
+}
