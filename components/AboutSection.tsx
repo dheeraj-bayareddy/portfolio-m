@@ -13,25 +13,33 @@ export function AboutSection() {
 
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-24 sm:px-10">
+      <blockquote className="text-sm italic leading-relaxed text-muted sm:text-base">
+        &ldquo;It is not the strongest of the species that survive&hellip;
+        but the one most adaptable to change.&rdquo;
+        <br />
+        <span className="not-italic">— Charles Darwin</span>
+      </blockquote>
+      <p className="mb-8 mt-3 text-base text-foreground/90 sm:text-lg">
+        That&rsquo;s the mindset I bring to everything I do.
+      </p>
+
       <span className="eyebrow">{t.about.eyebrow}</span>
       <h2 className="text-3xl font-bold tracking-tight">{t.about.heading}</h2>
 
       <div className="mt-8 grid grid-cols-1 items-start gap-8 md:grid-cols-[1fr_1.3fr]">
         <p className="text-base leading-relaxed text-foreground/90 sm:text-lg">
-          M.Sc. Data Science student based in Berlin, transitioning from 3+
-          years as a production software engineer into applied machine
-          learning. Focused on deep learning, classical ML, and building
-          reliable data pipelines — bringing engineering discipline from a
-          live insurance platform into data-driven and ML-focused work across
-          the European market.
+          M.Sc. Data Science student based in Berlin. With 3 years as a
+          software engineer, I bring production-grade engineering discipline
+          to data and ML work — from building pipelines and scalable backend
+          systems to applying deep learning and classical ML on real
+          problems. Adaptable by nature, I move comfortably across the data
+          stack: engineering, analysis, and modeling — and I&rsquo;m looking
+          to bring that range to data-driven teams across Europe.
         </p>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {stats.map((stat) => (
-            <div
-              key={stat.key}
-              className="stat-card glass rounded-2xl p-5"
-            >
+            <div key={stat.key} className="stat-card glass rounded-2xl p-5">
               <div className="stat-num gradient-text text-2xl">
                 {stat.value}
               </div>
