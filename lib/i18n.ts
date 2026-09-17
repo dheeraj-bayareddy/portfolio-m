@@ -4,6 +4,7 @@ export interface Dictionary {
   nav: {
     home: string;
     about: string;
+    experience: string;
     projects: string;
     skills: string;
     contact: string;
@@ -12,6 +13,10 @@ export interface Dictionary {
   hero: {
     downloadResume: string;
     viewResume: string;
+  };
+  experience: {
+    eyebrow: string;
+    heading: string;
   };
   projects: {
     eyebrow: string;
@@ -57,6 +62,7 @@ const en: Dictionary = {
   nav: {
     home: "Home",
     about: "About",
+    experience: "Experience",
     projects: "Projects",
     skills: "Skills",
     contact: "Contact",
@@ -65,6 +71,10 @@ const en: Dictionary = {
   hero: {
     downloadResume: "Download Resume",
     viewResume: "View Resume",
+  },
+  experience: {
+    eyebrow: "Career",
+    heading: "Experience",
   },
   projects: {
     eyebrow: "Selected Work",
@@ -110,6 +120,7 @@ const de: Dictionary = {
   nav: {
     home: "Start",
     about: "Über mich",
+    experience: "Erfahrung",
     projects: "Projekte",
     skills: "Fähigkeiten",
     contact: "Kontakt",
@@ -118,6 +129,10 @@ const de: Dictionary = {
   hero: {
     downloadResume: "Lebenslauf herunterladen",
     viewResume: "Lebenslauf ansehen",
+  },
+  experience: {
+    eyebrow: "Werdegang",
+    heading: "Erfahrung",
   },
   projects: {
     eyebrow: "Ausgewählte Arbeiten",

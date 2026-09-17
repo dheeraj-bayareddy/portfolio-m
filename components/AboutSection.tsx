@@ -26,7 +26,7 @@ export function AboutSection() {
       <span className="eyebrow">{t.about.eyebrow}</span>
       <h2 className="text-3xl font-bold tracking-tight">{t.about.heading}</h2>
 
-      <div className="mt-8 grid grid-cols-1 items-start gap-8 md:grid-cols-[1fr_1.3fr]">
+      <div className="mt-8 grid grid-cols-1 items-center gap-8 md:grid-cols-[1.3fr_1fr] md:gap-x-16">
         <p className="text-base leading-relaxed text-foreground/90 sm:text-lg">
           M.Sc. Data Science student based in Berlin. With 3 years as a
           software engineer, I bring production-grade engineering discipline
@@ -37,9 +37,14 @@ export function AboutSection() {
           to bring that range to data-driven teams across Europe.
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {stats.map((stat) => (
-            <div key={stat.key} className="stat-card glass rounded-2xl p-5">
+            <div
+              key={stat.key}
+              className={`stat-card glass rounded-2xl p-5 ${
+                stat.key === "stat3" ? "sm:col-span-2" : ""
+              }`}
+            >
               <div className="stat-num gradient-text text-2xl">
                 {stat.value}
               </div>
