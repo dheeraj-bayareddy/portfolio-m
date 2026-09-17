@@ -41,7 +41,7 @@ export function AboutSection() {
           {stats.map((stat) => (
             <div
               key={stat.key}
-              className={`stat-card glass rounded-2xl p-5 ${
+              className={`gravity-card glass rounded-2xl p-5 ${
                 stat.key === "stat3" ? "sm:col-span-2" : ""
               }`}
             >

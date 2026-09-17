@@ -227,13 +227,6 @@ h3,
   }
 }
 
-.stat-card {
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-.stat-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--glass-border);
-}
 .stat-num {
   font-family: var(--font-head);
   font-weight: 700;
@@ -256,13 +249,11 @@ h3,
 @media (prefers-reduced-motion: reduce) {
   .chip-hover,
   .gravity-card,
-  .stat-card,
   .skill-group-glow {
     transition: none;
   }
   .chip-hover:hover,
   .gravity-card:hover,
-  .stat-card:hover,
   .skill-group-glow:hover {
     transform: none;
   }
