@@ -11,7 +11,7 @@ const EMAIL = "dheerajbayareddy@gmail.com";
 const primaryButton =
   "btn-primary inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0";
 const secondaryButton =
-  "glass inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-foreground transition-transform hover:-translate-y-0.5 active:translate-y-0";
+  "glass glow-hover inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-foreground transition-transform hover:-translate-y-0.5 active:translate-y-0";
 const socialButton =
   "glass glow-hover flex h-10 w-10 items-center justify-center rounded-xl transition-transform hover:-translate-y-0.5 active:translate-y-0";
 
